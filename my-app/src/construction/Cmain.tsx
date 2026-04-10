@@ -1,10 +1,12 @@
-import Hero from './hero/Hero'  // ✅ Correct - no extension, no extra characters
+import Hero from './hero/Hero' ;
+
 
 function App() {
 
   return (
 <>
 <Hero />
+
 </>
   )
 }
