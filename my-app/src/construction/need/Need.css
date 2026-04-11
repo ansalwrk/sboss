@@ -1,0 +1,26 @@
+.btnneed {
+   
+    border: 1px solid #414949;
+    border-radius: 30px;
+    padding: 12px;
+    text-align: center;
+    color:#96a8b0;
+    font-size: 14px;
+    font-weight: 500;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #171b1d;
+
+
+
+}
+
+.cardbig{
+        border: 1px solid #414949;
+        border-radius: 30px;
+        background-color: #182020;
+
+        
+
+
+}
