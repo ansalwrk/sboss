@@ -26,9 +26,9 @@ function Hero() {
 
     <div className='flex flex-row clwt gap-8   items-center'> 
 
-        <div className="cardh cardthree" style={{color:"#38e7bb"}}>Data Sovereignty</div><span>|</span>
-        <div className="cardh cardthree" style={{color:"#38e7bb"}}>On-Premises / Private Cloud</div>    <span>|</span>
-        <div className="cardh cardthree" style={{color:"#38e7bb"}}   >Privacy-First AI</div>
+        <div className="cardh clmg cardthree" >Data Sovereignty</div><span>|</span>
+        <div className="cardh clmg cardthree" >On-Premises / Private Cloud</div>    <span>|</span>
+        <div className="cardh clmg cardthree" >Privacy-First AI</div>
     </div>
 
     <div className="grid grid-cols-3 pt-4  pb-38">

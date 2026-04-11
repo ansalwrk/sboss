@@ -1,6 +1,7 @@
-import React from 'react'
-import "./Need.css"
-import "../Cmain.css"
+import "./Need.css";
+import "../Cmain.css";
+import Needimg from  "../media/needimg.jpg";
+import { Check } from 'lucide-react';
 
 // Component definition
 function Need() {
@@ -30,32 +31,41 @@ function Need() {
   </div>
 
 
-<div className='grid grid-cols-2 px-30 pt-10'>
-  <div className='cardbig px-20' >
-
-
-    <div>Accounting</div>
-  </div>  
-    <div className='cardbig px-20' >
-
-
-      
-    </div>
- 
 
 
 
+
+
+
+
+  <div className='grid grid-cols-2 px-13 pt-10'> <div className='cardbig pt-15 pl-12' style={{borderRadius:" 15px 0px 0px 15px"}}>
+
+
+      <h3 className='clwt' style={{fontSize:"30px ", fontWeight:"700"}}>Accounting</h3>
+      <p className='cldull pt-2' style={{fontSize:"16px", fontWeight:"400"}}>Project-Wise Financial Control</p>
+
+      <ul  style={{fontSize:"",fontWeight:""}}>
+        <li className='flex flex-row ... cldull'> <Check size={16} color="#15c19f" />    Cost centers by project, package, and site</li>
+
+
+
+      </ul>
+
+
+
+
+
+
+
+
+
+
+    </div><div className='cardbig' style={{borderRadius:" 0px 15px 15px 0px"}}>  <img className='needimg' src={Needimg} /> </div>
   </div>
-    
-    
-    
-    
-
-
-
-
-
-</div></>
+  <div className=" flex-cols-1 items-center">
+    <div className="cardsm items-center ">100% Self-Hosted</div>
+  </div>
+  </div></>
   )
 }
 export default Need
