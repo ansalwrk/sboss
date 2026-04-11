@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+/* Basic card styling */
+.card { 
+    
+    border: 1px solid #272727;
+    color:#f2f2f2;
+    border-radius: 15px;
+    background:#17191b;
+    text-align: center;
+    height: fit-content;
+
+    /* Sticky positioning for the stacking effect */
+    position: sticky;
+    top: 50px; /* Each card will stop when it hits the top of the viewport */
+
+    /* Add some margin and width for better visual stacking */
+    margin: 0 auto 20px auto;
+
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+
+    /* Smooth transition for hover effects */
+    transition: all 0.3s ease;
+
+    /* Optional: Add a subtle shadow and z-index to ensure proper layering */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+.hv{
+
+
+    height: fit-content;
+
+    /* Sticky positioning for the stacking effect */
+    position: sticky;
+    top: 50px; /* Each card will stop when it hits the top of the viewport */
+
+
+
+    /* Smooth transition for hover effects */
+    transition: all 0.3s ease;
+
+
+}

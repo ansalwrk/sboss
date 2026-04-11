@@ -1,5 +1,7 @@
 import Hero from './hero/Hero' ;
 import Our from './Our/Our' ;
+import Wellcome from './wellcome/Wellcome';
+import Need from './need/Need';
 
 
 function App() {
@@ -8,6 +10,8 @@ function App() {
 <>
 <Hero />
 <Our />
+< Wellcome/>
+< Need />
 
 </>
   )
