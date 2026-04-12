@@ -1,7 +1,7 @@
 import "./Need.css";
 import "../Cmain.css";
 import Needimg from  "../media/needimg.jpg";
-import { Check } from 'lucide-react';
+import { Check , Shield } from 'lucide-react';
 
 // Component definition
 function Need() {
@@ -62,8 +62,7 @@ function Need() {
 
     </div><div className='cardbig' style={{borderRadius:" 0px 15px 15px 0px"}}>  <img className='needimg' src={Needimg} /> </div>
   </div>
-  <div className=" flex-cols-1 items-center">
-    <div className="cardsm items-center ">100% Self-Hosted</div>
+<div className="grid grid-cols-1 place-items-center">    <p className="cardsm items-center flex flex-cols clmg   "  style={{fontSize:"13px", fontWeight:'600'}}><Shield size={16} style={{marginRight:"10px"}} />100% Self-Hosted</p>
   </div>
   </div></>
   )
