@@ -7,9 +7,9 @@ export default Optional
 // Component definition
 function Optional() {                                                                   
   return (
-<><div className='allbg'>
+<><div className='allbg pb-50    0'>
 
-    <div className="grid grid-cols-1 place-items-center">   
+    <div className="grid grid-cols-1 place-items-center pb-10">   
         <p className="cardsm items-center flex flex-cols clmg" style={{fontSize:"13px", fontWeight:'600'}}>
             <Shield size={16} style={{marginRight:"10px"}}/>Optional Module
         </p>

@@ -18,7 +18,7 @@ function Need() {
 
 
   const cards = [
-    { id: 1, name: "Construction ERP", title: "Construction ERP",  content: "Built for Real-World Project Execution", 
+    { id: 1, name: "Construction ERP className", title: "Construction ERP",  content: "Built for Real-World Project Execution", 
       alltext:<div className="needp cldull pt-5 ">
         <p className="pb-4 flex"><Check className=" clmg mr-2" size={16}/>  Project planning, BOQs, WBS, and milestone tracking  </p>
         <p className="pb-4 flex"><Check className=" clmg mr-2" size={16}/>  Contractor and subcontractor management  </p>
@@ -138,7 +138,9 @@ function Need() {
             <div
               key={card.id}
               className={`btnneed cursor-pointer btn11 transition-all duration-300 ${activeCard === card.id ? 'active-card' : ''}`}
-              onClick={() => handleCardClick(card)}
+              onClick={() =>  handleCardClick(card)}
+
+              
             >
               {card.name}
             </div>
@@ -148,7 +150,7 @@ function Need() {
           {secondRowCards.map((card) => (
             <div
               key={card.id}
-              className={`btnneed cursor-pointer btn11 transition-all duration-300 ${activeCard === card.id ? 'active-card' : ''}`}
+              className={`btnneed cursor-pointer btn11  transition-all duration-300 ${activeCard === card.id ? 'active-card' : ''}`}
               onClick={() => handleCardClick(card)}
             >
               {card.name}

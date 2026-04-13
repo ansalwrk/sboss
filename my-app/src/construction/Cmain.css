@@ -1,8 +1,9 @@
 @import "tailwindcss";
 .allbg { 
-  background-color:black;
+  background-color: black;
   font-family: Inter, system-ui, sans-serif;
-  line-height:1.0;
+  line-height: 1.0;
+  border-bottom: 0.1px solid #4242426e;
 }
 
 

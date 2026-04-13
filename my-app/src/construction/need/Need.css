@@ -38,10 +38,6 @@
 }
 
 
-.btn11 {
-  /* Add transition for smooth color changes */
-  transition: all 0.3s ease;
-}
 
 .btn11:hover {
   opacity: 1;
@@ -54,4 +50,28 @@
 /* Active state for clicked button */
 .btn11.active {
   background-color: aqua;
+}
+
+
+
+
+
+
+
+.btn12 {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+.btn12:not(.active) {
+  background-color: #e0e0e0;
+  transform: translateX(5px);
+}
+
+.btn12:active {
+  background-color: #2196f3;
+  color: white;
 }
