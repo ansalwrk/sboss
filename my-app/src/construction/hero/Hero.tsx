@@ -3,6 +3,7 @@ import React from 'react'
 import "./Hero.css"
 import "../Cmain.css"
 import herovideo from "../media/herovideo.mp4"
+export default Hero
 
 // Component definition
 function Hero() {
@@ -42,4 +43,3 @@ function Hero() {
   )
 }
 
-export default Hero

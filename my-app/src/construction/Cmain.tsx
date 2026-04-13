@@ -2,6 +2,7 @@ import Hero from './hero/Hero' ;
 import Our from './Our/Our' ;
 import Wellcome from './wellcome/Wellcome';
 import Need from './need/Need';
+import Optional from './optional/Optional';
 
 
 function App() {
@@ -10,8 +11,9 @@ function App() {
 <>
 <Hero />
 <Our />
-< Wellcome/>
-< Need />
+<Wellcome/>
+<Need />
+<Optional />
 
 </>
   )

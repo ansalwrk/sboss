@@ -2,6 +2,7 @@
 .allbg { 
   background-color:black;
   font-family: Inter, system-ui, sans-serif;
+  line-height:1.0;
 }
 
 
@@ -86,17 +87,14 @@
     border-radius: 10px;
     padding: 20px;
     color: #4be2a2;
-    animation: float3D 3s ease-in-out infinite;
+    animation: float3D 2s ease-in-out infinite;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes float3D {
-    0% {
-        transform: translateY(0px) translateX(0px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+
     50% {
-        transform: translateY(-15px) translateX(3px);
+        transform: translateX(-20px) translateX(3px);
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
     }
     100% {
@@ -104,6 +102,10 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 }
+
+
+
+
 /* hover effect */
 
 
