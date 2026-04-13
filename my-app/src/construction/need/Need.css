@@ -29,3 +29,29 @@
     object-fit: cover; /* or contain, depending on your needs */
     border-radius: 0px 15px 15px 0px;
 }
+
+
+.needp {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+.btn11 {
+  /* Add transition for smooth color changes */
+  transition: all 0.3s ease;
+}
+
+.btn11:hover {
+  opacity: 1;
+  transform: scale(1.02);
+  cursor: pointer;
+  color:"white";
+  border-color: rgba(0, 255, 255, 0.616);
+}
+
+/* Active state for clicked button */
+.btn11.active {
+  background-color: aqua;
+}
