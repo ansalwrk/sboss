@@ -8,9 +8,9 @@ function Our() {
   return (
 <> 
 <div className='allbg'>
-<div className='hv grid grid-cols-2 gap-x-5 px-10  '>
+<div className='hv grid grid-cols-2 gap-x-5 px-10 pb-30 '>
 
-    <div className='hv'style={{textAlign:"left"}}>  
+    <div className='hv 'style={{textAlign:"left"}}>  
 
         <p className='clmg ' style={{fontSize:"16px", fontWeight:"600"}}>OUR PROCESS</p>
    
@@ -25,9 +25,6 @@ function Our() {
             <br />owners, EPCs, and contractors. 
         </span>
     </div>
-
-
-
 <div className='grid-cols-1 pr-5 '>
 
     <div className='card'>
@@ -75,6 +72,7 @@ function Our() {
             </div>
      
     </div>
+    
 
 
 </div></div></>

@@ -6,6 +6,7 @@ import Optional from './optional/Optional'
 import Customization from './customization/Customization'
 import Parent from './parent/Parent'
 import Last from './last/Last'
+import Sign from './sign/sign'
 
 
 
@@ -21,6 +22,7 @@ function App() {
 <Parent />
 <Customization />
 <Last />
+<Sign />
 
 </>
   )
