@@ -4,7 +4,7 @@
 import React from 'react';
 import "./Sing.css";
 import "../Cmain.css";
-import { Building2, Sparkles, MoveUpRight } from 'lucide-react';
+import { Building2, Sparkles,UserRound,Mail,Lock, MoveUpRight } from 'lucide-react';
 export default Sign
 
 // Component definition
@@ -32,8 +32,62 @@ return (
         </div>
 
 
+ <div className=' grid grid-cols... py-5 '>
 
 
+    <div className="input-container py-2  " style={{ position: 'relative' }}>
+    <input id="input" type="text" className="input" defaultValue=""  
+
+    placeholder='Your Name'   
+        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
+    <UserRound size={16} color="#15c19f" /></div></div>
+    
+
+     <div className="input-container py-2" style={{ position: 'relative' }}>
+    <input id="input" type="text" className="input" defaultValue=""  
+
+    placeholder='Your Name'   
+        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
+    <Mail size={16} color="#15c19f" /></div></div>
+
+
+
+     <div className="input-container py-2" style={{ position: 'relative' }}>
+    <input id="input" type="text" className="input" defaultValue=""  
+
+    placeholder='Your Name'   
+        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
+    <Lock size={16} color="#15c19f" /></div></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     </div>
 
 

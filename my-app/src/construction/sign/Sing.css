@@ -108,3 +108,82 @@
   background: #94a3b8;
 }
 }
+
+
+
+
+
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.input {
+  padding: 9px 100px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #1f2937;
+  cursor: text;
+  transition: all 0.2s ease;
+}
+
+.input:hover {
+  border-color: #9ca3af;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Disabled state styling (if needed) */
+.input:disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+  border-color: #d1d5db;
+}
+
+.input:disabled:hover {
+  border-color: #d1d5db;
+}
+
+/* Error state styling (optional) */
+.input.error {
+  border-color: #ef4444;
+}
+
+.input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.helper-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Error helper text */
+.helper-text.error {
+  color: #ef4444;
+}
