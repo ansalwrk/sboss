@@ -115,7 +115,7 @@ function Need() {
   return (
     <div className='allbg pb-80'>
       <div className='grid grid-cols-1 pt-60 pb-10' style={{ textAlign: "center" }}>
-        <p className='clmg' style={{ fontSize: "16px", fontWeight: "650" }}>
+        <p className='clmg ' style={{ fontSize: "16px", fontWeight: "650" }}>
           EVERYTHING YOU NEED
         </p>
         <h2 className='clwt' style={{ fontSize: "48px", fontWeight: "700" }}>

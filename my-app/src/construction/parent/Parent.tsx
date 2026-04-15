@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Parent.css";
 import "../Cmain.css";
-import { Shield, Users, Truck, MapPin, ShieldAlert, Camera, TriangleAlert, Eye, Building2, Sparkles, MoveUpRight } from 'lucide-react';
+import {  Building2, Sparkles, MoveUpRight } from 'lucide-react';
 
 // Component definition
 export default function Parent() {

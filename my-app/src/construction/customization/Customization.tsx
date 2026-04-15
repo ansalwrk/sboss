@@ -6,7 +6,7 @@ import { Shield, Users, Truck, MapPin, ShieldAlert, Camera, TriangleAlert, Eye, 
 // Component definition
 export default function Customization() {
 return (
-<><div className='allbg pb-80  '>
+<><div className='allbg pb-40  '>
 
         <div className='grid grid-cols-1 py-20  pb-20'    style={{textAlign:"center"}}>
         <h2 className='clwt'style={{ fontSize:"36px ",fontWeight:"700 " }}>Customization & Deployment</h2>
@@ -39,7 +39,7 @@ return (
                 <div className='card ' style={{textAlign:"left" , lineHeight:"1.5"}}>
                     <h3 className='clmg flex mb-5 ' style={{fontSize:"20px",fontWeight:"600"}}> Customization </h3>
                     <ul className="cldull " style={{fontSize:"14px", fontWeight:"400",}}>
-                        <li className='flex py-1'><Dot className="hdot" size={40} color="#15c19f" />Fully on-premises deployment</li>
+                        <li className='flex py-1'><Dot className="blink" size={40} color="#15c19f" />Fully on-premises deployment</li>
                         <li className='flex py-1'><Dot size={35} color="#15c19f" />Private cloud (single-tenant) </li>
                         <li className='flex py-1'><Dot size={35} color="#15c19f" /> High availability and disaster recovery setups</li>
                         <li className='flex py-1'><Dot size={35} color="#15c19f" />Offline-first site operations with sync support </li>
