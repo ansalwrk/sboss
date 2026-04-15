@@ -187,3 +187,14 @@
 .helper-text.error {
   color: #ef4444;
 }
+
+
+.card12 { 
+    position: relative;
+    border: 1px solid #2727279a;
+    border-radius: 15px;
+ 
+    height:fit-content;
+  padding: 2.5px 10px;
+  font-size: 12px;
+}
