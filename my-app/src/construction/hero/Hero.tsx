@@ -1,45 +1,62 @@
-
-import React from 'react'
-import "./Hero.css"
-import "../Cmain.css"
-import herovideo from "../media/herovideo.mp4"
-export default Hero
+import React from 'react';
+import "./Hero.css";
+import "../Cmain.css";
+import herovideo from "../media/herovideo.mp4";
 
 // Component definition
 function Hero() {
   return (
-<>  <div className="herovideo"> <video src={herovideo} autoPlay loop muted />  </div>
-<div className='herobg hero pt-32 pl-12'>
+    <>
+      {/* Video Background Container */}
+      <div className="video-container">
+        <video src={herovideo} autoPlay loop muted playsInline />
+        {/* Optional overlay for better text readability */}
+        <div className="video-overlay"></div>
+      </div>
 
-    <div className="flex flex-col clwt" style={{ fontSize: "57px", fontWeight: "700", lineHeight: "1.0" }}>       
-        <div>Your Self-Hosted</div>
-        <div>Construction ERP with <span className='clmg'>AI</span></div>
-        <div>Vision <span className='clmg'>&</span> Site Intelligence</div>
-    </div>
+      {/* Hero Content */}
+      <div className="hero-content">
+        <div className="container">
+          {/* Main Heading */}
+          <div className="heading-wrapper">
+            <h1 className="main-heading">
+              Your Self-Hosted
+              <br />
+              Construction ERP with <span className="accent-text">AI</span>
+              <br />
+              Vision <span className="accent-text">&</span> Site Intelligence
+            </h1>
+          </div>
 
-    <div className='cldull pb-4' style={{ fontSize: "20px", fontWeight: "500", lineHeight: "1.5", marginTop: "20px" }}>
-        <p>SBOSS Construction ERP is a self-hosted Business Operating Smart System purpose-</p>
-        <p>built for construction and infrastructure projects. It unifies project ERP, site operations,</p>
-        <p>workforce management, AI computer vision, tracking, and analytics into a single on-</p>
-        <p>premises or private cloud platform — ensuring complete control over your project</p>
-        <p>data, site intelligence, and trade secrets.</p>
-    </div>
+          {/* Description */}
+          <div className="description-wrapper">
+            <p className="description-text" style={{maxWidth:"800px"}}>
+              SBOSS Construction ERP is a self-hosted Business Operating Smart System purpose-
+              built for construction and infrastructure projects. It unifies project ERP, site operations,
+              workforce management, AI computer vision, tracking, and analytics into a single on-
+              premises or private cloud platform — ensuring complete control over your project
+              data, site intelligence, and trade secrets.
+            </p>
+          </div>
 
-    <div className='flex flex-row clwt gap-8   items-center'> 
+          {/* Feature Cards */}
+          <div className="features-wrapper">
+            <div className="feature-card">Data Sovereignty</div>
+            <span className="separator">|</span>
+            <div className="feature-card">On-Premises / Private Cloud</div>
+            <span className="separator">|</span>
+            <div className="feature-card">Privacy-First AI</div>
+          </div>
 
-        <div className="cardh clmg cardthree" >Data Sovereignty</div><span>|</span>
-        <div className="cardh clmg cardthree" >On-Premises / Private Cloud</div>    <span>|</span>
-        <div className="cardh clmg cardthree" >Privacy-First AI</div>
-    </div>
-
-    <div className="grid grid-cols-3 pt-4  pb-38">
-        <div className="grid grid-cols-2 gap-4 ">
-            <div className="btn " style={{ background: "#22d3b8"}}>Request a Demo</div>
-            <div className="btn">Explore Platform</div>
+          {/* Buttons */}
+          <div className="buttons-wrapper">
+            <button className="btn btn-primary">Request a Demo</button>
+            <button className="btn btn-secondary">Explore Platform</button>
+          </div>
         </div>
-    </div>
-
-</div></>
-  )
+      </div>
+    </>
+  );
 }
 
+export default Hero;

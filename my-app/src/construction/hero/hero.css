@@ -1,96 +1,255 @@
 @import "tailwindcss";
-.herobg { 
-     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.548), #000000);  /* Fixed gradient syntax */
-  font-family: Inter, system-ui, sans-serif;
+
+/* Video Container - Fullscreen Background */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  overflow-x: hidden;
 }
 
-
-/* color */ 
-.clbk{color: black;}
-.clwt {color: white;}
-.clmg{color: #38e7bb;}
-.cldull{color: #8a99a0;}
-
-/* color */
-
-/* card */
-.cardh { 
-    
-    border: 1px solid #272727;
-    color:#f2f2f2;
-    border-radius: 30px;
-    margin: 20px;
-    background:#17191b52;
-    text-align: center;
-
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures video covers entire screen without distortion */
 }
 
+/* Optional overlay for better text contrast */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
+  z-index: 1;
+}
 
-.cardthree {
-  padding: 5px;
-  font-family: "JetBrains Mono", monospace;
+/* Hero Content - Positioned on top of video */
+.hero-content {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Heading Styles */
+.heading-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.main-heading {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  /* Responsive: 2rem on mobile, 3.5rem on desktop */
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .main-heading {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-heading {
+    font-size: 57px;
+    /* Desktop original size */
+  }
+}
+
+.accent-text {
   color: #38e7bb;
-  font-size: 14px;
 }
 
+/* Description Styles */
+.description-wrapper {
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
 
-/* card */
+.description-text {
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #8a99a0;
+  margin: 0;
+}
 
+@media (min-width: 1024px) {
+  .description-text {
+    font-size: 20px;
+    /* Desktop original size */
+  }
+}
 
+/* Features Wrapper - Responsive flex wrap */
+.features-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem 0;
+}
 
-/* hover effect */
+.feature-card {
+  padding: 0.5rem 1rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  color: #38e7bb;
+  background: rgba(23, 25, 27, 0.5);
+  border: 1px solid #272727;
+  border-radius: 30px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Responsive: Stack feature cards on mobile */
+@media (max-width: 640px) {
+  .features-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .separator {
+    display: none;
+    /* Hide separators when stacked */
+  }
+
+  .feature-card {
+    width: auto;
+    white-space: normal;
+  }
+}
+
+.separator {
+  color: #8a99a0;
+  font-size: 1rem;
+  margin: 0 0.25rem;
+}
+
+/* Buttons Wrapper */
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #22d3b8;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #1bb89f;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid #22d3b8;
+}
+
+.btn-secondary:hover {
+  background: rgba(34, 211, 184, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Button Sizing */
+@media (max-width: 480px) {
+  .buttons-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-content {
+    padding: 4rem 3rem;
+  }
+
+  .feature-card {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Ensure body has no margin and background */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+/* Animation for hover effect (keep existing) */
 .heart {
-    background: #0b0d0f;
-    border: 1px solid #272727;
-    border-radius: 10px;
-    padding: 20px;
-    color: #4be2a2;
-    animation: float3D 3s ease-in-out infinite;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: #0b0d0f;
+  border: 1px solid #272727;
+  border-radius: 10px;
+  padding: 20px;
+  color: #4be2a2;
+  animation: float3D 3s ease-in-out infinite;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes float3D {
-    0% {
-        transform: translateY(0px) translateX(0px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-        transform: translateY(-15px) translateX(3px);
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        transform: translateY(0px) translateX(0px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+  0% {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    transform: translateY(-15px) translateX(3px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 }
-/* hover effect */
-
-/* this is the video */
-
-.herovideo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    position: absolute;
-    opacity: 0.9;  /* Fixed: changed from 90% to 0.9 */
-    top: 0;        /* Added: positions video at top */
-    left: 0;       /* Added: positions video at left */
-}
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    opacity: 100%;  /* Fixed: changed from 80% to 0.8 */
-}
-
-
-
-
-
-
-
-
-
-
-

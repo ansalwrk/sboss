@@ -1,121 +1,90 @@
-
-
-
-import React from 'react';
-import Ig from '../media/ig.jpg'
+import React, { useState } from 'react';
+import { Building2, UserRound, Mail, Lock, MessageSquare, Phone, Paperclip } from 'lucide-react';
+import G from '../media/g.jpg';
+import Fb from '../media/fb.png';
+import T from '../media/t.png';
+import Li from '../media/li.png';
 import "./Sing.css";
-import "../Cmain.css";
-import { Building2, ShieldCheck,Sparkles,Paperclip,UserRound,Mail,Lock, MoveUpRight,MessageSquare , Phone } from 'lucide-react';
-export default Sign
 
-// Component definition
-function Sign() {                                                                   
-return (
-<><div className='allbg px-50 py-25'>
-<div className='signcard bgwt  pt-8 pb-10'>
+export default function Sign() {
+    // State to track which side the overlay is on
+    const [isEnquiryMode, setIsEnquiryMode] = useState(false);
 
+    return (
+        <div className="allbg min-h-screen flex items-center justify-center p-4">
+            <div className={`sign-container ${isEnquiryMode ? 'active' : ''}`}>
+                
+                {/* --- OVERLAY LAYER (The Moving Green Part) --- */}
+                <div className="overlay-container">
+                    <div className="overlay">
+                        {/* Content visible when overlay is on the Right (Signup View) */}
+                        <div className="overlay-panel overlay-right">
+                            <h2 className="text-2xl font-bold mb-4">Need a Solution?</h2>
+                            <p className="mb-8 text-sm">Talk to our experts and get the right solution for your business.</p>
+                            <button className="ghost-btn" onClick={() => setIsEnquiryMode(true)}>ENQUIRE NOW</button>
+                        </div>
+                        
+                        {/* Content visible when overlay is on the Left (Enquiry View) */}
+                        <div className="overlay-panel overlay-left">
+                            <h2 className="text-2xl font-bold mb-4">Get Started</h2>
+                            <p className="mb-8 text-sm">Create your SBOSS account and access your business operating system.</p>
+                            <button className="ghost-btn" onClick={() => setIsEnquiryMode(false)}>SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
 
-    <div className='grid grid-cols-2 pl-15 place-items-start '>
+                {/* --- FORM 1: CREATE ACCOUNT (Left Side) --- */}
+                <div className="form-container sign-up-container">
+                    <form className="form-content">
+                        <h2 className="font-bold text-2xl mb-2">Create Your SBOSS Account</h2>
+                        <p className="cldull text-xs mb-6">Set up your account to access your business <br/> operating system.</p>
+                        
+                        <div className="input-group">
+                            <UserRound className="input-icon" size={18} />
+                            <input type="text" placeholder="Your Name" />
+                        </div>
+                        <div className="input-group">
+                            <Mail className="input-icon" size={18} />
+                            <input type="email" placeholder="Work Email Address" />
+                        </div>
+                        <div className="input-group">
+                            <Lock className="input-icon" size={18} />
+                            <input type="password" placeholder="Create Password" />
+                        </div>
+                        
+                        <button className="main-btn mt-4">CREATE ACCOUNT</button>
+                        <p className="text-xs mt-4 cldull">Already have an account? <span className="clmg cursor-pointer">Sign In</span></p>
+                        
+                        <div className="flex gap-4 mt-6">
+                            <img src={G} alt="G" className="social-icon" />
+                            <img src={Fb} alt="F" className="social-icon" />
+                            <img src={T} alt="T" className="social-icon" />
+                            <img src={Li} alt="L" className="social-icon" />
+                        </div>
+                    </form>
+                </div>
 
-        <div className='grid grid-col-1 '>
-            <h2 className='py-3' style={{fontSize:'24px', fontWeight:"700", color:"black"}}>Create Your SBOSS Account</h2>
-            <p className='cldull'style={{fontSize:'14px', fontWeight:"500",lineHeight:"1.5" }} >Set up your account to access your business <br/>operating system.</p>
-        
-         <div className=' grid grid-cols... py-5 '>
+                {/* --- FORM 2: ENQUIRY (Right Side) --- */}
+                <div className="form-container enquiry-container">
+                    <form className="form-content">
+                        <p className="text-emerald-500 font-bold text-[10px] tracking-widest">ETHICAL INTELLIGENT TECHNOLOGIES</p>
+                        <h2 className="font-bold text-2xl mb-6">Let's Work Together</h2>
+                        
+                        <div className="input-group"><UserRound className="input-icon" size={18} /><input type="text" placeholder="Full Name *" /></div>
+                        <div className="input-group"><Phone className="input-icon" size={18} /><input type="text" placeholder="Mobile Number *" /></div>
+                        <div className="input-group"><Mail className="input-icon" size={18} /><input type="email" placeholder="Email Address *" /></div>
+                        <div className="input-group"><Building2 className="input-icon" size={18} /><input type="text" placeholder="Company Name" /></div>
+                        <div className="input-group"><MessageSquare className="input-icon" size={18} /><textarea placeholder="Message *" /></div>
+                        
+                        <div className="flex items-start gap-2 text-xs cldull cursor-pointer border rounded-full px-4 py-1 mb-4">
+                            <Paperclip size={14} /> Attach File
+                        </div>
+                        
+                        <button className="main-btn">SUBMIT</button>
+                    </form>
+                </div>
 
-
-    <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Your Name'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <UserRound size={20} color="#15c19f" /></div></div>
-    
-
-     <div className="input-container py-2" style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Your Name'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <Mail size={20} color="#15c19f" /></div></div>
-
-
-
-     <div className="input-container py-2" style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Your Name'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <Lock size={20} color="#15c19f" /></div></div>
-
-    <div className='btn grid grid-col-1  gap-4 const1' style={{fontSize:"15px", fontWeight:"700", backgroundColor:"#23d4bb",textAlign:"center", borderColor:"#ffffff2f", padding:"8px", borderRadius:"20px"}}>
-           CREATE ACCOUNT   </div>
-           <p className='cldull py-3' style={{fontSize:"12", fontWeight:"400"}}>Already have an account? Sign In</p>
-    <div className='pl-15'>
-    <img className='ig ' src={Ig} alt="Need illustration" /> 
-    </div>
-    
-    </div>
-    </div>
-
-        
-
-        <div className='place-items-start pl-20  '>
-            <div className='grid grid-col-1 px-8' >
-                <p style={{ fontSize:"14px", fontWeight:"600", color:"#15C19F"}}>
-                    ETHICAL INTELLIGENT TECHNOGIES   </p>
-                <h2 className='py-3' style={{fontSize:'20px', fontWeight:"700", color:"black"}}>Let's Work Together</h2>
-            </div> 
-
-
-
-    <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Full Name * '   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <UserRound size={20} color="#15c19f" /></div></div>
-        <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Mobile Number *'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <Phone size={20} color="#15c19f" /></div></div>
-        <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Email Address *'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <Mail size={20} color="#15c19f" /></div></div>
-        <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Enter Captcha *'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <Building2 size={20} color="#15c19f" /></div></div>
-        <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Your Name'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <MessageSquare size={20} color="#15c19f" /></div></div>
-        <div className="input-container py-2  " style={{ position: 'relative' }}>
-    <input id="input" type="text" className="input" defaultValue=""  
-
-    placeholder='   Your Name'   
-        style={{ paddingLeft: '24px' }}/><div style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',pointerEvents: 'none'}}>
-    <ShieldCheck size={20} color="#15c19f" /></div></div>
-
-    <div className=' card12 flex mt-2 mb-3 cldull ' style={{backgroundColor:"#00000000" }}> 
-        <Paperclip className='pr-1' size={18} color="#6b6b6b" />Attach File</div>
-    
-                <div className='btn flex gap-4 const1' style={{backgroundColor:"#23d4bb", borderColor:"#ffffff2f", padding:"8px 110px", borderRadius:"20px"}}>
-                       Submit   </div>
-
-
-
-
-
+            </div>
         </div>
-    </div>
-</div></div></>);}
+    );
+}
