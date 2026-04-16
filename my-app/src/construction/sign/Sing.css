@@ -1,4 +1,5 @@
-/* Container sizing */
+/* --- KEEP YOUR EXISTING DESKTOP STYLES UNCHANGED --- */
+
 .sign-container {
     background-color: #fff;
     border-radius: 20px;
@@ -11,7 +12,6 @@
     border: 8px solid #1ccaac;
 }
 
-/* Form layouts */
 .form-container {
     position: absolute;
     top: 0;
@@ -19,25 +19,10 @@
     transition: all 0.6s ease-in-out;
 }
 
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
+.sign-up-container { left: 0; width: 50%; z-index: 2; }
+.enquiry-container { left: 0; width: 50%; opacity: 0; z-index: 1; }
 
-.enquiry-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-/* When Active (Enquiry Mode) */
-.sign-container.active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 0;
-}
-
+.sign-container.active .sign-up-container { transform: translateX(100%); opacity: 0; }
 .sign-container.active .enquiry-container {
     transform: translateX(100%);
     opacity: 1;
@@ -50,7 +35,6 @@
     50%, 100% { opacity: 1; z-index: 5; }
 }
 
-/* Overlay Logic */
 .overlay-container {
     position: absolute;
     top: 0;
@@ -62,12 +46,9 @@
     z-index: 100;
 }
 
-.sign-container.active .overlay-container {
-    transform: translateX(-100%);
-}
+.sign-container.active .overlay-container { transform: translateX(-100%); }
 
 .overlay {
-    background: #1ccaac;
     background: linear-gradient(to right, #1ccaac, #23d4bb);
     color: #FFFFFF;
     position: relative;
@@ -78,9 +59,7 @@
     transition: transform 0.6s ease-in-out;
 }
 
-.sign-container.active .overlay {
-    transform: translateX(50%);
-}
+.sign-container.active .overlay { transform: translateX(50%); }
 
 .overlay-panel {
     position: absolute;
@@ -101,7 +80,6 @@
 .overlay-right { right: 0; transform: translateX(0); }
 .sign-container.active .overlay-right { transform: translateX(20%); }
 
-/* Styling Elements */
 .form-content {
     background-color: #FFFFFF;
     display: flex;
@@ -113,20 +91,93 @@
     text-align: center;
 }
 
-.input-group {
-    position: relative;
-    width: 100%;
-    margin: 8px 0;
+/* --- RESPONSIVE FIX FOR SM AND MD --- */
+
+@media (max-width: 768px) {
+    .sign-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        height: auto;
+        width: 100%;
+        border-width: 4px; /* Slightly thinner border for mobile */
+    }
+
+    /* Stack containers instead of absolute positioning */
+    .form-container {
+        position: relative;
+        width: 100% !important;
+        height: auto;
+        transform: none !important;
+        padding: 40px 0;
+    }
+
+    /* Hide the form that isn't active */
+    .sign-up-container {
+        display: none;
+    }
+    .enquiry-container {
+        display: none;
+        opacity: 1; /* Reset opacity for mobile */
+    }
+
+    /* Logic to show active form */
+    .sign-container:not(.active) .sign-up-container {
+        display: block;
+    }
+    .sign-container.active .enquiry-container {
+        display: block;
+    }
+
+    /* Reposition Overlay as a header/footer toggle */
+    .overlay-container {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 200px; /* Smaller height for mobile */
+        order: -1; /* Move to top */
+        transform: none !important;
+    }
+
+    .overlay {
+        width: 100%;
+        left: 0;
+        transform: none !important;
+    }
+
+    .overlay-panel {
+        width: 100%;
+        transform: none !important;
+        padding: 20px;
+    }
+
+    /* Toggle visibility of overlay text based on mode */
+    .overlay-left, .overlay-right {
+        display: none;
+    }
+
+    .sign-container:not(.active) .overlay-right {
+        display: flex;
+        transform: none !important;
+    }
+
+    .sign-container.active .overlay-left {
+        display: flex;
+        transform: none !important;
+    }
+
+    .form-content {
+        padding: 0 20px;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
 }
 
-.input-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #1ccaac;
-}
-
+/* Other global styles */
+.input-group { position: relative; width: 100%; margin: 8px 0; }
+.input-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #1ccaac; }
 .input-group input, .input-group textarea {
     background-color: #f3f3f3;
     border: none;
@@ -135,34 +186,7 @@
     width: 100%;
     outline: none;
 }
-
-.main-btn {
-    border-radius: 25px;
-    background-color: #23d4bb;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-    cursor: pointer;
-}
-
-.ghost-btn {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #fff;
-    border-radius: 25px;
-    padding: 10px 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.social-icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
+.main-btn { border-radius: 25px; background-color: #23d4bb; color: #ffffff; font-size: 12px; font-weight: bold; padding: 12px 45px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.ghost-btn { background-color: transparent; border: 2px solid #ffffff; color: #fff; border-radius: 25px; padding: 10px 30px; font-weight: bold; cursor: pointer; }
+.social-icon { width: 30px; height: 30px; cursor: pointer; }
 .cldull { color: #888; }
